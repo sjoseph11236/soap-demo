@@ -1,0 +1,32 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://wozu.com/soapDemo"
+           targetNamespace="http://wozu.com/soapDemo"
+           elementFormDefault="qualified">
+    <!--    Request -->
+    <xs:element name="getUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string" />
+            </xs:sequence>
+
+        </xs:complexType>
+    </xs:element>
+    <!--Response -->
+    <xs:element name="getUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" type="tns:user" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!--Create complex type user-->
+    <xs:complexType name="user">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="employeeId" type="xs:int" />
+            <xs:element name="salary" type="xs:double" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+
+<!--https://www.w3.org/TR/2000/NOTE-SOAP-20000508/-->
